@@ -1,4 +1,4 @@
-import { createGlobalStyle  } from 'styled-components';
+import { createGlobalStyle } from 'styled-components';
 
 export default createGlobalStyle`
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;1,100;1,200&display=swap');
@@ -13,6 +13,10 @@ export default createGlobalStyle`
     background: #FAF5FF;
     color: #fff;
     -webkit-font-smoothing : antialised;
+  }
+
+  input:-webkit-autofill {
+    background-color: #FAFFBD !important;
   }
 
   body, html, input, button {
@@ -37,4 +41,4 @@ export default createGlobalStyle`
   button {
     cursor: pointer;
   }`
-;
+  ;
