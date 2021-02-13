@@ -1,4 +1,4 @@
-import * as S from './styles';
+import * as S from '../styles/Pages/styles';
 import FormLoggin from '../components/Form';
 
 export default function Loggin() {
