@@ -32,26 +32,26 @@ Para testar na sua maquina:
 <p>This project is a simple loggin aplication, create to reinforce concepts and learn new technologies.</p>
 <span> To view: https://wiser-loggin-app.netlify.app/ </span>
 
-Technologies used: 
-NextJs;
-Typescript;
-Styled Components;
-React Redux;
-Redux Saga;
-Hooks;
-Axios;
+Technologies used:
+* NextJs;
+* Typescript;
+* Styled Components;
+* React Redux;
+* Redux Saga;
+* Hooks;
+* Axios;
 
 Features:
-Full responsive;
-Valid inputs Form;
-Create and Register User;
-Authentic by email and valid password;
+* Full responsive;
+* Valid inputs Form;
+* Create and Register User;
+* Authentic by email and valid password;
 
 To Install and Test in your PC: 
 * Node version used: 14.10.1;
 
-1 - Download this code;
-2 - Open folder of code in your terminal;
-3 - Run "yarn Install" or "npm install";
-4 - After installing the dependencies, run "yarn dev";
-5 - This project will run in http://localhost:3000/
+* 1 - Download this code;
+* 2 - Open folder of code in your terminal;
+* 3 - Run "yarn Install" or "npm install";
+* 4 - After installing the dependencies, run "yarn dev";
+* 5 - This project will run in http://localhost:3000/
