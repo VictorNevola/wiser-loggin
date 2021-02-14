@@ -1,8 +1,9 @@
 import React, { useState, useEffect } from "react";
 import { useDispatch } from 'react-redux';
-import  { singUpUserRequest } from '../../store/modules/user/actions';
 import { useForm } from "react-hook-form";
 
+import LoaderIcon  from '../Loader/index';
+import { singUpUserRequest } from '../../store/modules/user/actions';
 
 import * as S from './styles';
 
@@ -10,6 +11,7 @@ export default function FormLoggin() {
     //States
     const [erroEmail, setErroEmail] = useState(false);
     const [erroPassword, setErroPassword] = useState(false);
+    const [loader, setLoader] = useState(false);
 
     //Controls Form
     const { register, handleSubmit, errors, clearErrors, watch } = useForm();
@@ -17,8 +19,15 @@ export default function FormLoggin() {
 
     //Actions
     const dispatch = useDispatch();
+    const removeLoader = () => {
+        setTimeout(()=> {
+            setLoader(false)
+        }, 3000);
+    }
 
     const onSubmit = data => {
+        setLoader(true);
+        removeLoader();
         dispatch(singUpUserRequest(data));
     };
     
@@ -71,7 +80,14 @@ export default function FormLoggin() {
 
             {errors.password?.type == "required" && <S.spanErrorInfo>Senha Obrigatorio</S.spanErrorInfo>}
 
-            <S.inputSubmit type="submit" />
+            <S.divSubmit>
+                {
+                    !loader && <S.inputSubmit type="submit" value="Entrar" /> 
+                }
+                {
+                    loader && <LoaderIcon />
+                }
+            </S.divSubmit>
 
             <S.spanInfo> Esqueceu seu login ou senha? <br /> <S.link href="#"> Clique aqui </S.link> </S.spanInfo>
 

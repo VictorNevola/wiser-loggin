@@ -1,5 +1,5 @@
 import style from 'styled-components';
-import {IPropsStyleContainer, IPropsStyleimage, IPropsStyleTitle} from '../../types/types';
+import {IPropsStyleContainer, IPropsStyleimage, IPropsStyleTitle} from '../../types/Loggin/types';
 
 export const ContainerMain = style.main `
     display: ${(props: IPropsStyleContainer )=> props.flex ? 'flex' : 'block'};

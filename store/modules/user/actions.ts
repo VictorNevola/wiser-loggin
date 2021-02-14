@@ -1,17 +1,17 @@
-import { IsingUpUserRequest } from '../../types';
+import { IsingUpUserRequest, IsingUpUserSuccess } from '../../../types/User';
 
 //Saga Root
 export function singUpUserRequest(data: IsingUpUserRequest) {
     return {
         type: 'SING_UP_REQUEST',
-        user: data
+        userSingUp: data
     }
 }
 
 //Redux Root
-export function singUpUserSuccess(users) {
+export function singUpUser(dataUser: IsingUpUserSuccess) {
     return {
         type: 'SING_UP_SUCCESS',
-        users: users
+        user: dataUser
     }
 }

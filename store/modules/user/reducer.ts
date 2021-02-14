@@ -1,9 +1,8 @@
 export default function user(state = [], action) {
-
     switch (action.type) {
         case "SING_UP_SUCCESS":
-            return action.users
+            return action.user
         default:
-            return state;
+            return null;
     }
 }
