@@ -10,7 +10,7 @@ export const divModalBackground = style.div`
     top: 0;
     bottom: 0;
     left: 0;
-    background-color: rgba(0,0,0,.75);
+    background-color: ${(props: IPropsStyleModal) => props.active ? 'rgba(0,0,0,.75)' : 'transparent'};
     transition: all .4s ease;
     z-index: ${(props: IPropsStyleModal) => props.active ? '99999' : '0'};
     opacity: ${(props: IPropsStyleModal) => props.active ? '1' : '0'};

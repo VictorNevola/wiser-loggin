@@ -1,30 +1,55 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+//PT
+Esse projeto é uma simples aplicacao de loggin, criado para reforcar conceitos e aprender novas tecnologias.
+Link do projeto: https://wiser-loggin-app.netlify.app/
 
-## Getting Started
+Tecnologias utilizadas:
+NextJs;
+Typescript;
+Styled Components;
+React Redux;
+Redux Saga;
+Hooks;
+Axios;
 
-First, run the development server:
+Recursos na aplicacao:
+Responsividade em todos os tamanhos;
+Validacao dos campos do formulario;
+Registrar um novo Usuario;
+Autenticacao do usuario por Email e por Senha;
 
-```bash
-npm run dev
-# or
-yarn dev
-```
+Para testar na sua maquina:
+* Versão do node utilizada: 14.10.1;
+1 - Baixe o Codigo;
+2 - Abra a pasta em seu terminal;
+3 - rode o comando "yarn install" ou "npm install";
+4 - Quando finalizar a instalacao das dependecias, rode o comando "yarn dev";
+5 - O projeto vai rodar um servidor local na porta 3000 - http://localhost:3000/;
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
-You can start editing the page by modifying `pages/index.js`. The page auto-updates as you edit the file.
+//English
+This project is a simple loggin aplication, create to reinforce concepts and learn new technologies.
+To view: https://wiser-loggin-app.netlify.app/
 
-## Learn More
+Technologies used: 
+NextJs;
+Typescript;
+Styled Components;
+React Redux;
+Redux Saga;
+Hooks;
+Axios;
 
-To learn more about Next.js, take a look at the following resources:
+Features:
+Full responsive;
+Valid inputs Form;
+Create and Register User;
+Authentic by email and valid password;
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+To Install and Test in your PC: 
+* Node version used: 14.10.1;
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/import?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+1 - Download this code;
+2 - Open folder of code in your terminal;
+3 - Run "yarn Install" or "npm install";
+4 - After installing the dependencies, run "yarn dev";
+5 - This project will run in http://localhost:3000/

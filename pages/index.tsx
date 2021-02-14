@@ -1,9 +1,16 @@
+import { useSelector } from "react-redux";
+
 import * as S from '../styles/Pages/styles';
 import FormLoggin from '../components/Form';
 import ModalAlert from '../components/ModalAlert';
 import ModalRegister from '../components/ModalRegister';
 
+import { IStateReturn } from "../types/User";
+
 export default function Loggin() {
+
+  const selectUSerState = (state: IStateReturn) => state.user
+  const user = useSelector(selectUSerState);
 
   return (
     <>
@@ -22,7 +29,10 @@ export default function Loggin() {
       </S.ContainerMain>
 
       <ModalAlert />
-      <ModalRegister />
+
+      {
+        user && <ModalRegister />
+      }
 
     </>
     
