@@ -1,12 +1,41 @@
 import { call, put, all, takeLatest }  from 'redux-saga/effects';
+import bcrypt from "bcryptjs";
+
 import api from '../../../services/api';
-import { singUpUserSuccess, singUpUserRequest } from './actions';
+import { singUpUser, singUpUserRequest } from './actions';
 
-function* singUp({ user }:  ReturnType<typeof singUpUserRequest>) {
+import { IUserData, IsingUpUserSuccess } from '../../../types/User';
 
-    const response = yield call(api.get, '/users');
+function* singUp({ userSingUp }:  ReturnType<typeof singUpUserRequest>) {
 
-    yield put(singUpUserSuccess(response.data))
+    const response: IUserData = yield call(api.get, '/users');
+    const userPayload: IsingUpUserSuccess = { isAuthenticated: false };
+
+    if( response && response.data && userSingUp) {
+
+        const userCapture = response.data.find(user => user.email === userSingUp.emailUser);
+
+        if(userCapture) {
+            const passwordAuth = yield bcrypt.compare(userSingUp.password, userCapture.password);
+            
+            if(passwordAuth) {
+                userPayload.message = 'Usuário autenticado com Sucesso';
+                userPayload.userInfos = userCapture;
+                userPayload.isAuthenticated = true;
+
+                return yield put(singUpUser(userPayload));
+            }
+       
+        }
+
+        userPayload.message = "E-mail ou senha incorretos, verificar!";
+        return yield put(singUpUser(userPayload));
+
+    }
+
+    userPayload.message = "Erro Interno, tentar novamente mais tarde!";
+    return yield put(singUpUser(userPayload));
+
 }
 
 export default all([
