@@ -1,26 +1,27 @@
 import React, { useState, useEffect } from "react";
+import { useDispatch } from 'react-redux';
+import  { singUpUserRequest } from '../../store/modules/user/actions';
 import { useForm } from "react-hook-form";
+
 
 import * as S from './styles';
 
 export default function FormLoggin() {
-    const { register, handleSubmit, errors, clearErrors, watch } = useForm();
-    const watchAllFields = watch();
-
+    //States
     const [erroEmail, setErroEmail] = useState(false);
     const [erroPassword, setErroPassword] = useState(false);
 
+    //Controls Form
+    const { register, handleSubmit, errors, clearErrors, watch } = useForm();
+    const watchAllFields = watch();
 
-    useEffect(()=> {
+    //Actions
+    const dispatch = useDispatch();
 
-        if(errors.emailUser == undefined) setErroEmail(false);
-        if(errors && errors?.emailUser) setErroEmail(true);
-
-        if(errors.password == undefined) setErroPassword(false);
-        if(errors && errors?.password) setErroPassword(true);
-
-    }, [watchAllFields]);
-
+    const onSubmit = data => {
+        dispatch(singUpUserRequest(data));
+    };
+    
     const clearErro = (inputRef: string) => {
 
         if(inputRef === 'emailUser') {
@@ -33,8 +34,17 @@ export default function FormLoggin() {
 
         clearErrors(inputRef);
     }
+    
+    useEffect(()=> {
 
-    const onSubmit = data => console.log(data);
+        if(errors.emailUser == undefined) setErroEmail(false);
+        if(errors && errors?.emailUser) setErroEmail(true);
+
+        if(errors.password == undefined) setErroPassword(false);
+        if(errors && errors?.password) setErroPassword(true);
+
+    }, [watchAllFields]);
+
 
     return (
         <S.form onSubmit={handleSubmit(onSubmit)}>

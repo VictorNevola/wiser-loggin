@@ -1,7 +1,13 @@
 import * as S from '../styles/Pages/styles';
 import FormLoggin from '../components/Form';
+import { useSelector } from 'react-redux';
 
 export default function Loggin() {
+
+  const user = useSelector(state => state)
+
+  console.log('user', user)
+
   return (
     <S.ContainerMain flex={true} height={'100vh'}> 
 
