@@ -11,15 +11,15 @@ const ldsRollerKeyFrame = keyframes`
 
 export const loader = style.div `
     display: block;
-    width: 40px;
-    height: 40px;
+    width: 20px;
+    height: 20px;
     margin: 0 auto;
 
     &:after {
         content: " ";
         display: block;
-        width: 32px;
-        height: 32px;
+        width: 14px;
+        height: 14px;
         margin: 0 auto;
         border-radius: 50%;
         border: 4px solid #fff;
