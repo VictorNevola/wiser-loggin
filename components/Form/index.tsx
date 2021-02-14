@@ -1,12 +1,16 @@
+import * as S from './styles';
+
 import React, { useState, useEffect, useCallback } from "react";
 import { useDispatch } from 'react-redux';
-import { useForm } from "react-hook-form";
-
-import LoaderIcon  from '../Loader/index';
 import { singUpUserRequest, openModalRegister, createUserRequest } from '../../store/modules/user/actions';
+import { useForm } from "react-hook-form";
+import loadable from '@loadable/component'
 
-import * as S from './styles';
 import { IpropsForm } from './types';
+
+const LoaderIcon = loadable(() => import('../Loader/index'));
+// import LoaderIcon  from '../Loader/index';
+
 
 export default function FormLoggin({ dispatchNameAction, infosButton, nameButtonSubmit }: IpropsForm) {
 
@@ -107,7 +111,7 @@ export default function FormLoggin({ dispatchNameAction, infosButton, nameButton
 
         </S.form>
             {
-                infosButton && <S.spanInfo> Não possui cadastro ou <br/> Esqueceu seu login ou senha? <br /> <S.link type="button" onClick={(e) => btnHandlerModalRegister(e)}> Clique aqui </S.link> </S.spanInfo>
+                infosButton && <S.spanInfo> Não possui cadastro / <br/> Esqueceu seu login ou senha? <br /> <S.link type="button" onClick={(e) => btnHandlerModalRegister(e)}> Clique aqui </S.link> </S.spanInfo>
             }
         </>
     )

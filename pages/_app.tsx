@@ -1,8 +1,10 @@
-import GlobalStyles from '../styles/global';
+// import GlobalStyles from '../styles/global';
+import loadable from '@loadable/component';
 import Head from 'next/head';
 import { Provider } from 'react-redux';
-
 import store from '../store';
+
+const GlobalStyles = loadable(() => import('../styles/global'));
 
 function MyApp({ Component, pageProps }) {
   return( 

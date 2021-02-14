@@ -1,9 +1,13 @@
-import { useSelector } from "react-redux";
-
 import * as S from '../styles/Pages/styles';
-import FormLoggin from '../components/Form';
-import ModalAlert from '../components/ModalAlert';
-import ModalRegister from '../components/ModalRegister';
+import { useSelector } from "react-redux";
+import loadable from '@loadable/component'
+
+const FormLoggin = loadable(() => import('../components/Form'));
+const ModalAlert = loadable(() => import('../components/ModalAlert'));
+const ModalRegister = loadable(() => import('../components/ModalRegister'));
+// import FormLoggin from '../components/Form';
+// import ModalAlert from '../components/ModalAlert';
+// import ModalRegister from '../components/ModalRegister';
 
 import { IStateReturn } from "../types/User";
 
