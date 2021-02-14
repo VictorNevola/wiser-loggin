@@ -92,8 +92,10 @@ export const spanInfo = style.span`
     text-align: center;
 `
 
-export const link = style.a`
-    display: block;
+export const link = style.button`
     text-decoration: underline;    
     color: #9626AC;
+    border: none;
+    font-size: 14px;
+    line-height: 20px;
 `

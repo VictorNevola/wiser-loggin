@@ -9,7 +9,8 @@ export interface IsingUpUserRequest {
 export interface IsingUpUserSuccess {
     isAuthenticated: boolean,
     message?: string,
-    userInfos?: { email: string, password: string }
+    userInfos?: { email: string, password: string },
+    activeModalRegister?: boolean
 }
 
 export interface IUserData extends AxiosResponse {
@@ -18,4 +19,8 @@ export interface IUserData extends AxiosResponse {
 
 export interface IStateReturn extends DefaultRootState {
     user: IsingUpUserSuccess
+}
+
+export interface IModalCreateOpen {
+    activeModalRegister: boolean
 }

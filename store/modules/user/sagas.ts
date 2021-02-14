@@ -2,7 +2,7 @@ import { call, put, all, takeLatest }  from 'redux-saga/effects';
 import bcrypt from "bcryptjs";
 
 import api from '../../../services/api';
-import { singUpUser, singUpUserRequest } from './actions';
+import { singUpUser, singUpUserRequest, createUserRequest } from './actions';
 
 import { IUserData, IsingUpUserSuccess } from '../../../types/User';
 
@@ -38,6 +38,34 @@ function* singUp({ userSingUp }:  ReturnType<typeof singUpUserRequest>) {
 
 }
 
+function* createUser({userInfos}: ReturnType<typeof createUserRequest>){
+
+    const salt = bcrypt.genSaltSync(10); 
+    const passwordHash = yield bcrypt.hashSync(userInfos.password, salt);
+    const userPayloadReturn: IsingUpUserSuccess = { isAuthenticated: false };
+    const userPayloadSendData = {
+        "email": userInfos.emailUser,
+        "password": passwordHash
+    }
+
+    const createUser = yield call(api.post, `/users`, userPayloadSendData);
+
+    if(createUser && createUser.data) {
+        userPayloadReturn.activeModalRegister = false;
+        userPayloadReturn.isAuthenticated = true;
+        userPayloadReturn.message = "Usuário Cadastrado com Sucesso.";
+
+        return yield put(singUpUser(userPayloadReturn)); 
+
+    }
+
+    userPayloadReturn.message = "Erro Interno, tentar novamente mais tarde!";
+    return yield put(singUpUser(userPayloadReturn));
+    
+}
+
 export default all([
-    takeLatest('SING_UP_REQUEST', singUp)
+    takeLatest('SING_UP_REQUEST', singUp),
+    takeLatest('CREATE_USER_REQUEST', createUser),
+
 ])

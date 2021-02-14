@@ -5,3 +5,9 @@ export interface IDivInput {
 export interface iButtonErro {
     error: boolean
 }
+
+export interface IpropsForm {
+    nameButtonSubmit: string,
+    infosButton: boolean,
+    dispatchNameAction: string
+}

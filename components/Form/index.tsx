@@ -1,13 +1,15 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useCallback } from "react";
 import { useDispatch } from 'react-redux';
 import { useForm } from "react-hook-form";
 
 import LoaderIcon  from '../Loader/index';
-import { singUpUserRequest } from '../../store/modules/user/actions';
+import { singUpUserRequest, openModalRegister, createUserRequest } from '../../store/modules/user/actions';
 
 import * as S from './styles';
+import { IpropsForm } from './types';
 
-export default function FormLoggin() {
+export default function FormLoggin({ dispatchNameAction, infosButton, nameButtonSubmit }: IpropsForm) {
+
     //States
     const [erroEmail, setErroEmail] = useState(false);
     const [erroPassword, setErroPassword] = useState(false);
@@ -22,13 +24,21 @@ export default function FormLoggin() {
     const removeLoader = () => {
         setTimeout(()=> {
             setLoader(false)
-        }, 3000);
+        }, 5000);
     }
 
     const onSubmit = data => {
-        setLoader(true);
-        removeLoader();
-        dispatch(singUpUserRequest(data));
+        if(dispatchNameAction === "SING_UP_REQUEST") {
+            setLoader(true);
+            removeLoader();
+            return dispatch(singUpUserRequest(data));
+        }
+
+        if(dispatchNameAction === "CREATE_USER_REQUEST"){
+            setLoader(true);
+            removeLoader();
+            return dispatch(createUserRequest(data))
+        }
     };
     
     const clearErro = (inputRef: string) => {
@@ -43,6 +53,11 @@ export default function FormLoggin() {
 
         clearErrors(inputRef);
     }
+
+    const btnHandlerModalRegister = useCallback((e)=> {
+        e.preventDefault();
+        dispatch(openModalRegister({activeModalRegister: true}))
+    }, [])
     
     useEffect(()=> {
 
@@ -56,8 +71,9 @@ export default function FormLoggin() {
 
 
     return (
+        <>
         <S.form onSubmit={handleSubmit(onSubmit)}>
-            <S.divInputTitle>
+            <S.divInputTitle>   
                 E-MAIL
             </S.divInputTitle>
 
@@ -82,16 +98,18 @@ export default function FormLoggin() {
 
             <S.divSubmit>
                 {
-                    !loader && <S.inputSubmit type="submit" value="Entrar" /> 
+                    !loader && <S.inputSubmit type="submit" value={nameButtonSubmit} /> 
                 }
                 {
                     loader && <LoaderIcon />
                 }
             </S.divSubmit>
 
-            <S.spanInfo> Esqueceu seu login ou senha? <br /> <S.link href="#"> Clique aqui </S.link> </S.spanInfo>
-
-        </S.form    >
+        </S.form>
+            {
+                infosButton && <S.spanInfo> Não possui cadastro ou <br/> Esqueceu seu login ou senha? <br /> <S.link type="button" onClick={(e) => btnHandlerModalRegister(e)}> Clique aqui </S.link> </S.spanInfo>
+            }
+        </>
     )
 
 }

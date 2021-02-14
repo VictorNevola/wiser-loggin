@@ -11,7 +11,7 @@ export default function ModalAlert() {
     const [ messagem, setMessage ] = useState('');
     
     useEffect(() => {
-        if(user && !active) {
+        if(user && !active && user.message) {
 
             setMessage(user.message);
             setActive(true);
