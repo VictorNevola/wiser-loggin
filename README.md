@@ -1,34 +1,36 @@
 //PT
-Esse projeto é uma simples aplicacao de loggin, criado para reforcar conceitos e aprender novas tecnologias.
-Link do projeto: https://wiser-loggin-app.netlify.app/
+<h1>Loggin Simples</h1>
+<p >Esse projeto é uma simples aplicacao de loggin, criado para reforcar conceitos e aprender novas tecnologias. </p>
+<span>Link do projeto: https://wiser-loggin-app.netlify.app/ </span>
 
 Tecnologias utilizadas:
-NextJs;
-Typescript;
-Styled Components;
-React Redux;
-Redux Saga;
-Hooks;
-Axios;
+* NextJs;
+* Typescript;
+* Styled Components;
+* React Redux;
+* Redux Saga;
+* Hooks;
+* Axios;
 
 Recursos na aplicacao:
-Responsividade em todos os tamanhos;
-Validacao dos campos do formulario;
-Registrar um novo Usuario;
-Autenticacao do usuario por Email e por Senha;
+* Responsividade em todos os tamanhos;
+* Validacao dos campos do formulario;
+* Registrar um novo Usuario;
+* Autenticacao do usuario por Email e por Senha;
 
 Para testar na sua maquina:
 * Versão do node utilizada: 14.10.1;
-1 - Baixe o Codigo;
-2 - Abra a pasta em seu terminal;
-3 - rode o comando "yarn install" ou "npm install";
-4 - Quando finalizar a instalacao das dependecias, rode o comando "yarn dev";
-5 - O projeto vai rodar um servidor local na porta 3000 - http://localhost:3000/;
+* 1 - Baixe o Codigo;
+* 2 - Abra a pasta em seu terminal;
+* 3 - rode o comando "yarn install" ou "npm install";
+* 4 - Quando finalizar a instalacao das dependecias, rode o comando "yarn dev";
+* 5 - O projeto vai rodar um servidor local na porta 3000 - http://localhost:3000/;
 
 
 //English
-This project is a simple loggin aplication, create to reinforce concepts and learn new technologies.
-To view: https://wiser-loggin-app.netlify.app/
+<h1>Loggin Simples</h1>
+<p>This project is a simple loggin aplication, create to reinforce concepts and learn new technologies.</p>
+<span> To view: https://wiser-loggin-app.netlify.app/ </span>
 
 Technologies used: 
 NextJs;
