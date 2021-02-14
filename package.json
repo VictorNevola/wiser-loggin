@@ -10,7 +10,6 @@
   "dependencies": {
     "@babel/core": "^7.12.16",
     "@babel/preset-typescript": "^7.12.16",
-    "@loadable/component": "^5.14.1",
     "axios": "^0.21.1",
     "babel": "^6.23.0",
     "bcryptjs": "^2.4.3",

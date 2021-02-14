@@ -4,12 +4,10 @@ import React, { useState, useEffect, useCallback } from "react";
 import { useDispatch } from 'react-redux';
 import { singUpUserRequest, openModalRegister, createUserRequest } from '../../store/modules/user/actions';
 import { useForm } from "react-hook-form";
-import loadable from '@loadable/component'
 
 import { IpropsForm } from './types';
 
-const LoaderIcon = loadable(() => import('../Loader/index'));
-// import LoaderIcon  from '../Loader/index';
+import LoaderIcon  from '../Loader/index';
 
 
 export default function FormLoggin({ dispatchNameAction, infosButton, nameButtonSubmit }: IpropsForm) {
