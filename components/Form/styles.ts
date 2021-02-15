@@ -1,6 +1,7 @@
 import style from 'styled-components';
 import { IDivInput, iButtonErro } from './types';
 
+
 export const form = style.form`
     width: 256px;
     margin-top: 26px;
@@ -61,6 +62,7 @@ export const spanErrorInfo = style.span`
     line-height: 24px;
     color: #FF377F;
     padding-left: 14px;
+    height: 14px;
 `
 export const divSubmit = style.div`
     background: linear-gradient(267.79deg, #383E71 0%, #9D25B0 99.18%);
@@ -69,6 +71,15 @@ export const divSubmit = style.div`
     margin-top:24px;
     margin-bottom: 32px;
     padding: 14px;
+
+    @media (min-width: 320px) and (max-width: 480px) {
+        box-shadow: none;
+        width: 168px;
+        margin: 0 auto;
+        margin-top: 32px;
+        margin-bottom: 24px;
+    }
+
 `
 
 export const inputSubmit = style.input `
@@ -90,6 +101,11 @@ export const spanInfo = style.span`
     text-align: center;
     color: #989FDB;
     text-align: center;
+
+    @media (min-width: 320px) and (max-width: 480px) {
+        color: #FFFFFF;
+    }
+
 `
 
 export const link = style.button`
@@ -98,4 +114,8 @@ export const link = style.button`
     border: none;
     font-size: 14px;
     line-height: 20px;
+    background-color: transparent;
+    @media (min-width: 320px) and (max-width: 480px) {
+        color: #FFFFFF;
+    }
 `

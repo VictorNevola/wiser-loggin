@@ -1,4 +1,4 @@
-import * as S from '../styles/Pages/styles';
+import * as S from '../styles/Pages/loggin';
 import { useSelector } from "react-redux";
 
 import FormLoggin from '../components/Form';
@@ -21,7 +21,7 @@ export default function Loggin() {
         <S.containerSection> 
 
           <S.Title isPrimary={true}> Olá, seja <br/> bem-vindo! </S.Title>
-          <S.Info isPrimary={false}> Para acessar a plataforma, <br /> faça seu login. </S.Info>
+          <S.Info isPrimary={false}> Para acessar a plataforma, faça seu login. </S.Info>
 
           <FormLoggin dispatchNameAction="SING_UP_REQUEST" infosButton={true} nameButtonSubmit={"Entrar"} />
 

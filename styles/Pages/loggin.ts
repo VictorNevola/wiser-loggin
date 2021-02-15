@@ -6,7 +6,32 @@ export const ContainerMain = style.main `
     height: ${(props: IPropsStyleContainer )=> props.height};
 
     @media (min-width: 320px) and (max-width: 480px) {
-        display: block;
+        background: #130525;
+        background: linear-gradient(180deg, #130525 0%, rgba(19,5,37,1) 100%);
+    }
+
+`
+
+export const containerSection = style.section `
+    padding: 136px 232px 114px 112px;
+    transition: all .4s ease;
+
+    @media (min-width:767px) and (max-width:768px) {
+        padding: 98px 80px 98px 80px;
+    }
+
+    @media (min-width: 320px) and (max-width: 480px) {
+        position: absolute;
+        top: 138px;
+        bottom: 0px;
+        left: 0px;
+        right: 0px;
+        padding: 24px 28px;
+        width: 311px;
+        height: 388px;
+        margin: 0 auto;
+        background: #FAF5FF;
+        border-radius: 8px;
     }
 
 `
@@ -18,44 +43,17 @@ export const ImageAsideWithBackground = style.aside `
     linear-gradient(1deg, #130525 0%, rgba(105, 57, 153, 0) 100%),
     url(${(props : IPropsStyleimage)=> props.imageUrl});
     background-size: cover;
-
-    @media (min-width: 320px) and (max-width: 480px) {
-        display: none;
-        // position: absolute;
-        // height: 200rem;
-        // background-position-x: center;
-    }
-
-`
-
-export const containerSection = style.section `
-    padding: 136px 232px 114px 112px;
+    background-position: bottom;
 
     @media (min-width:767px) and (max-width:768px) {
-        padding: 98px 32px 98px 32px;
+        width: 327px;
     }
 
     @media (min-width: 320px) and (max-width: 480px) {
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            padding: 42px 22px 0px 22px;
+        background-repeat: no-repeat;
+        background-position-y: -18px;
+        height: 429px;
     }
-
-    // @media (min-width: 320px) and (max-width: 480px) {
-    //     position: absolute;
-    //     top: 0;
-    //     left: 30%;
-    //     top: 30%;
-    //     right: 0px;
-    //     bottom: 0;
-    //     background-color: #FAF5FF;
-    //     padding: 0px;
-    //     width: 54rem;
-    //     height: 74rem;
-    //     margin: 0 auto;
-    // }
 
 `
 
@@ -65,10 +63,18 @@ export const Title = style.h1 `
     font-size: 40px;
     line-height: 48px;
     margin-bottom: 16px;
+
+    @media (min-width: 320px) and (max-width: 480px) {
+        font-size: 24px;
+        line-height: 32px;
+        text-align: center;
+    }
 `
 
 export const Info = style.span `
     color: ${(props:IPropsStyleTitle) => props.isPrimary ? '#383E71' : '#989FDB'};
+    display: block;
+    width: 222px;
     font-weight: 600;
     font-size: 16px;
     line-height: 20px;
@@ -76,6 +82,8 @@ export const Info = style.span `
 
     @media (min-width: 320px) and (max-width: 480px) {
         margin-bottom: 18px;
+        font-size: 12px;
+        width: 100%;
     }
 
 `

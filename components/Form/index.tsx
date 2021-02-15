@@ -69,8 +69,8 @@ export default function FormLoggin({ dispatchNameAction, infosButton, nameButton
         if(errors.password == undefined) setErroPassword(false);
         if(errors && errors?.password) setErroPassword(true);
 
-    }, [watchAllFields]);
 
+    }, [watchAllFields]);
 
     return (
         <>
@@ -84,7 +84,7 @@ export default function FormLoggin({ dispatchNameAction, infosButton, nameButton
                 <S.buttonErro error={erroEmail} type="button" onClick={()=> clearErro('emailUser')} />
             </S.Divinput>
 
-            {errors.emailUser?.type == "required" && <S.spanErrorInfo>Email Obrigatorio</S.spanErrorInfo>}
+            {errors.emailUser?.type == "required" ? <S.spanErrorInfo>Email Obrigatorio</S.spanErrorInfo> : <S.spanErrorInfo />}
             {errors.emailUser?.type == "pattern" && <S.spanErrorInfo>Digite um e-mail válido</S.spanErrorInfo>}
             
             <S.divInputTitle> 
@@ -96,7 +96,7 @@ export default function FormLoggin({ dispatchNameAction, infosButton, nameButton
                 <S.buttonErro error={erroPassword} type="button" onClick={()=> clearErro('password')} />
             </S.Divinput>
 
-            {errors.password?.type == "required" && <S.spanErrorInfo>Senha Obrigatorio</S.spanErrorInfo>}
+            {errors.password?.type == "required" ? <S.spanErrorInfo>Senha Obrigatorio</S.spanErrorInfo> : <S.spanErrorInfo />}
 
             <S.divSubmit>
                 {

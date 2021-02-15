@@ -10,7 +10,7 @@ export interface IsingUpUserSuccess {
     isAuthenticated: boolean,
     message?: string,
     userInfos?: { email: string, password: string },
-    activeModalRegister?: boolean
+    activeModalRegister?: boolean,
 }
 
 export interface IUserData extends AxiosResponse {
