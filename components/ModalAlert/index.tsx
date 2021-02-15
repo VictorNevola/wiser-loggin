@@ -31,7 +31,7 @@ export default function ModalAlert() {
     }, [user]);
 
     return (
-        <S.div active={active} error={isError}>
+        <S.div active={active} error={isError} id={"modal-alert"}>
             <span>{messagem}</span>
         </S.div>
     );
