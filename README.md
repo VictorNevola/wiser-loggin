@@ -1,6 +1,6 @@
 //PT
 <h1>Loggin Simples</h1>
-<p >Esse projeto é uma simples aplicacao de loggin, criado para reforcar conceitos e aprender novas tecnologias. </p>
+<p >Esse projeto é uma simples aplicacao de loggin, criado para reforçar conceitos e aprender novas tecnologias. </p>
 <span>Link do projeto: https://wiser-loggin-app.netlify.app/ </span>
 
 Tecnologias utilizadas:
